@@ -141,7 +141,7 @@
             bindings = <
                   &as LS(Q) Q      &as LS(W) W      &as LS(E) E       &as LS(R) R             &as LS(T) T        &kp Y           &kp U            &kp I                &as LS(O) O         &as LS(P) P
                   &mt CAPS A       &kp S            &kp D             &kp F                   &kp G              &kp H           &kp J            &kp K                &kp L               &as COLON SEMICOLON
-&lt 1 LG(LS(C))   &hmLeft LSHFT Z  &hmLeft LCTRL X  &hmLeft LALT C    &hmLeft LGUI V          &kp B              &kp N           &hmRight RGUI M  &hmRight RALT COMMA  &hmRight RCTRL DOT  &hmRight RSHFT SLASH  &lt 3 LG(LS(N4))
+&lt 1 LG(LS(C))   &hmLeft LSHFT Z  &hmLeft LCTRL X  &hmLeft LALT C    &hmLeft LGUI V          &hmLeft LSHFT B    &hmRight RSHFT N  &hmRight RGUI M  &hmRight RALT COMMA  &hmRight RCTRL DOT  &hmRight RSHFT SLASH  &lt 3 LG(LS(N4))
                                                     &mt LEFT_COMMAND CAPS  &lt 2 ESCAPE  &lt 4 TAB    &lt 4 BACKSPACE  &kp SPACE  &kp ENTER
             >;
         };
