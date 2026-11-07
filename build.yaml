@@ -24,4 +24,6 @@ include:
     snippet: studio-rpc-usb-uart
   - board: xiao_ble//zmk
     shield: totem_right
-# there is no settingsreset (needed) for the XIAO
+  # 모든 설정(블루투스 페어링, Studio 키맵 등)을 지우는 초기화 펌웨어
+  - board: xiao_ble//zmk
+    shield: settings_reset
