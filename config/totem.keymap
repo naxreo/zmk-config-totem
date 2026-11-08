@@ -9,8 +9,6 @@
 //                                                                      ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-
 // Keyball39 키맵(zmk-config-Keyball39)을 토템 38키 배열로 옮긴 것
 //
 // 키 위치 번호 (토템)
@@ -47,6 +45,7 @@
 / {
     behaviors {
         // 왼손 홈로우 모드: 오른손 키(+오른손 엄지)가 눌릴 때만 hold 로 판정
+
         hmLeft: hmLeft {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
@@ -59,6 +58,7 @@
         };
 
         // 오른손 홈로우 모드: 왼손 키(+왼손 엄지)가 눌릴 때만 hold 로 판정
+
         hmRight: hmRight {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
@@ -71,6 +71,7 @@
         };
 
         // auto shift: 짧게 누르면 기본 자모, 길게 누르면 Shift 조합(쌍자음 ㅃㅉㄸㄲㅆ, 모음 ㅒㅖ)
+
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
@@ -83,6 +84,7 @@
         };
 
         // 조합키 전용 hold-tap: 홀드 시 매크로로 한 번만 tap (auto-repeat 없음)
+
         mts: mt_shot {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&shot>, <&kp>;
@@ -95,6 +97,7 @@
 
     macros {
         // 파라미터로 받은 키코드를 한 번만 tap (auto-repeat 방지용)
+
         shot: shot {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -139,60 +142,60 @@
         default_layer {
             display-name = "QWRT";
             bindings = <
-                  &as LS(Q) Q      &as LS(W) W      &as LS(E) E       &as LS(R) R             &as LS(T) T        &kp Y           &kp U            &kp I                &as LS(O) O         &as LS(P) P
-                  &mt CAPS A       &kp S            &kp D             &kp F                   &kp G              &kp H           &kp J            &kp K                &kp L               &as COLON SEMICOLON
-&lt 1 LG(LS(C))   &hmLeft LSHFT Z  &hmLeft LCTRL X  &hmLeft LALT C    &hmLeft LGUI V          &hmLeft LSHFT B    &hmRight RSHFT N  &hmRight RGUI M  &hmRight RALT COMMA  &hmRight RCTRL DOT  &hmRight RSHFT SLASH  &lt 3 LG(LS(N4))
-                                                    &mt LEFT_COMMAND CAPS  &lt 2 ESCAPE  &lt 4 TAB    &lt 4 BACKSPACE  &kp SPACE  &kp ENTER
+                   &as LS(Q) Q      &as LS(W) W      &as LS(E) E                    &as LS(R) R     &as LS(T) T        &kp Y             &kp U            &kp I                &as LS(O) O         &as LS(P) P
+                   &mt CAPS A       &kp S            &kp D                          &kp F           &kp G              &kp H             &kp J            &kp K                &kp L               &as COLON SEMICOLON
+&lt (1) LG(LS(C))  &hmLeft LSHFT Z  &hmLeft LCTRL X  &hmLeft LALT C                 &hmLeft LGUI V  &hmLeft LSHFT B    &hmRight RSHFT N  &hmRight RGUI M  &hmRight RALT COMMA  &hmRight RCTRL DOT  &hmRight RSHFT SLASH  &lt (3) LG(LS(N4))
+                                                     &mt (LEFT_COMMAND) LS(ESCAPE)  &lt 2 ESCAPE    &lt 4 TAB          &lt 4 BACKSPACE   &kp SPACE        &kp ENTER
             >;
         };
 
         macro {
             display-name = "NUM";
             bindings = <
-          &trans  &trans  &trans  &trans  &trans    &kp SLASH     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp BACKSPACE
-          &trans  &trans  &trans  &trans  &trans    &kp PLUS      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none
-  &trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &trans
-                          &trans  &trans  &trans    &trans        &kp NUMBER_0  &kp ENTER
+        &trans  &trans  &trans  &trans  &trans    &kp SLASH  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp BACKSPACE
+        &trans  &trans  &trans  &trans  &trans    &kp PLUS   &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &none
+&trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp ASTERISK   &trans
+                        &trans  &trans  &trans    &trans     &kp NUMBER_0  &kp LS(ENTER)
             >;
         };
 
         symbol_layer {
             display-name = "SYM";
             bindings = <
-          &mts LG(Q) EXCLAMATION  &mts LG(W) AT_SIGN  &kp HASH   &mts LG(R) DOLLAR  &kp PERCENT       &kp CARET                    &kp AMPERSAND   &as UNDERSCORE MINUS  &mts LG(O) LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS
-          &kp GRAVE               &kp TILDE           &mo 3      &kp PIPE           &kp BACKSLASH     &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as DOUBLE_QUOTES SQT
-  &trans  &trans                  &trans              &kp LG(C)  &kp LG(V)          &kp UNDERSCORE    &kp DEL                      &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION                 &trans
-                                                                 &trans             &trans            &trans                       &trans          &trans                &kp LS(ENTER)
+        &mts LG(Q) EXCLAMATION  &mts LG(W) AT_SIGN  &kp HASH   &mts LG(R) DOLLAR  &kp PERCENT       &kp CARET                    &kp AMPERSAND   &as UNDERSCORE MINUS  &mts LG(O) LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS
+        &kp GRAVE               &kp TILDE           &mo 3      &kp PIPE           &kp BACKSLASH     &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as DOUBLE_QUOTES SQT
+&trans  &trans                  &trans              &kp LG(C)  &kp LG(V)          &kp UNDERSCORE    &kp DEL                      &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION           &trans
+                                                    &trans     &trans             &trans            &trans                       &trans          &kp LS(ENTER)
             >;
         };
 
         function_layer {
             display-name = "FUN";
             bindings = <
-          &kp F1  &kp F2   &kp F3   &kp F4   &none     &none     &none     &none   &none      &none
-          &kp F5  &kp F6   &kp F7   &kp F8   &none     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
-  &trans  &kp F9  &kp F10  &kp F11  &kp F12  &none     &none     &none     &none   &none      &none   &trans
-                           &trans   &trans   &trans    &trans    &trans    &trans
+        &kp F1  &kp F2   &kp F3   &kp F4   &none     &none     &none     &none   &none      &none
+        &kp F5  &kp F6   &kp F7   &kp F8   &none     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &none     &none     &none     &none   &none      &none  &trans
+                         &trans   &trans   &trans    &trans    &trans    &trans
             >;
         };
 
         mouse_layer {
             display-name = "MOUSE";
             bindings = <
-          &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6    &kp NUMBER_7   &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-          &trans        &trans        &mkp MB2      &mkp MB1      &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN       &kp UP        &kp RIGHT     &mkp MB4
-  &trans  &trans        &trans        &trans        &trans        &msc SCRL_DOWN    &kp DELETE      &kp BACKSPACE  &mkp MB1      &mkp MB2      &trans    &trans
-                                      &trans        &trans        &trans            &mkp MB4        &mkp MB5       &trans
+        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6    &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0
+        &trans        &trans        &mkp MB2      &mkp MB1      &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN       &kp UP         &kp RIGHT     &mkp MB4
+&trans  &trans        &trans        &trans        &trans        &msc SCRL_DOWN    &kp DELETE      &kp BACKSPACE  &mkp MB1       &mkp MB2      &trans        &trans
+                                    &trans        &trans        &trans            &mkp MB4        &mkp MB5       &kp LS(ENTER)
             >;
         };
 
         bluetooth {
             display-name = "BT";
             bindings = <
-               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_SEL 4    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-               &bt BT_CLR    &trans        &trans        &trans        &bt BT_CLR_ALL    &bt BT_CLR_ALL  &trans        &trans        &trans        &bt BT_CLR
-  &trans       &trans        &trans        &trans        &trans        &trans            &trans          &trans        &trans        &trans        &trans      &trans
-                                           &bootloader   &trans        &trans            &trans          &trans        &bootloader
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_SEL 4    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+        &bt BT_CLR    &trans        &trans        &trans        &bt BT_CLR_ALL    &bt BT_CLR_ALL  &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans        &trans            &trans          &trans        &trans        &trans        &trans        &trans
+                                    &bootloader   &trans        &trans            &trans          &trans        &bootloader
             >;
         };
     };
