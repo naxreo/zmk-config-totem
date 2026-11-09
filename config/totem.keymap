@@ -102,6 +102,50 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
+
+        // 윈도우 관리 단축키 — 홀드해도 1회만 전송 (auto-repeat 없음)
+
+        wCenter: window_center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(C)>;
+        };
+
+        wLeft: window_left_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT)>;
+        };
+
+        wRight: window_right_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>;
+        };
+
+        wSize: window_reasonable_size {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(O)>;
+        };
+
+        wDesktop: window_next_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
+
+        wDisplay: window_next_display {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(TAB))>;
+        };
+
+        wMission: window_mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP)>;
+        };
     };
 
     combos {
@@ -151,9 +195,9 @@
         macro {
             display-name = "NUM";
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &kp SLASH  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp BACKSPACE
-        &trans  &trans  &trans  &trans  &trans    &kp PLUS   &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &none
-&trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp ASTERISK   &trans
+        &trans  &trans  &wMission  &trans     &trans       &kp SLASH  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp BACKSPACE
+        &trans  &wLeft  &wSize     &wRight    &wDisplay    &kp PLUS   &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &none
+&trans  &trans  &trans  &wCenter   &wDesktop  &trans       &kp MINUS &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp ASTERISK   &trans
                         &trans  &trans  &trans    &trans     &kp NUMBER_0  &kp LS(ENTER)
             >;
         };
