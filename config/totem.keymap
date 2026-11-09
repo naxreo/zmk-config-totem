@@ -142,9 +142,9 @@
             display-name = "QWRT";
             bindings = <
                    &as LS(Q) Q      &as LS(W) W      &as LS(E) E                    &as LS(R) R     &as LS(T) T        &kp Y             &kp U            &kp I                &as LS(O) O         &as LS(P) P
-                   &mt CAPS A       &kp S            &kp D                          &kp F           &kp G              &kp H             &kp J            &kp K                &kp L               &as COLON SEMICOLON
+                   &mt CAPS A       &kp S            &kp D                          &kp F           &kp G              &kp H             &kp J            &kp K                &kp L               &as LS(SINGLE_QUOTE) SINGLE_QUOTE
 &lt (1) LG(LS(C))  &hmLeft LSHFT Z  &hmLeft LCTRL X  &hmLeft LALT C                 &hmLeft LGUI V  &hmLeft LSHFT B    &hmRight RSHFT N  &hmRight RGUI M  &hmRight RALT COMMA  &hmRight RCTRL DOT  &hmRight RSHFT SLASH  &lt (3) LG(LS(N4))
-                                                     &mt (LEFT_COMMAND) LS(ESCAPE)  &lt 2 ESCAPE    &lt 4 TAB          &lt 4 BACKSPACE   &kp SPACE        &kp ENTER
+                                                     &mt LEFT_COMMAND ESC           &mo 2           &lt 4 LS(ESCAPE)   &lt 4 BACKSPACE   &kp SPACE        &kp ENTER
             >;
         };
 
@@ -161,9 +161,9 @@
         symbol_layer {
             display-name = "SYM";
             bindings = <
-        &mts LG(Q) EXCLAMATION  &mts LG(W) AT_SIGN  &kp HASH   &mts LG(R) DOLLAR  &kp PERCENT      &kp CARET                    &kp AMPERSAND   &as UNDERSCORE MINUS  &mts LG(O) LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS
-        &kp GRAVE               &kp TILDE           &mo 3      &kp PIPE           &kp BACKSLASH    &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as DOUBLE_QUOTES SQT
-&trans  &trans                  &trans              &kp LG(C)  &kp LG(V)          &kp SEMICOLON    &kp DEL                      &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION           &trans
+        &kp EXCLAMATION         &kp AT_SIGN         &kp HASH   &mts LG(R) DOLLAR  &kp PERCENT      &kp CARET                    &kp AMPERSAND   &kp MINUS             &mts LG(O) LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS
+        &kp GRAVE               &kp LG(S)           &mo 4      &kp BACKSLASH      &kp COLON        &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as LS(SEMICOLON) SEMICOLON
+&trans  &trans                  &kp PIPE            &kp LG(C)  &kp LG(V)          &kp TILDE        &kp DEL                     &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION           &trans
                                                     &trans     &trans             &trans           &trans                       &trans          &kp LS(ENTER)
             >;
         };
