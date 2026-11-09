@@ -222,12 +222,12 @@
             >;
         };
 
-        mouse_layer {
-            display-name = "MOUSE";
+        nav_layer {
+            display-name = "NAV";
             bindings = <
         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0
-        &trans        &trans        &trans        &trans        &kp TILDE       &kp LEFT_ARROW  &kp DOWN       &kp UP         &kp RIGHT     &trans
-&trans  &trans        &trans        &trans        &trans        &kp COLON       &kp DELETE      &kp BACKSPACE  &trans         &trans        &trans        &trans
+        &kp LG(LEFT)  &kp LA(LEFT)  &kp LA(RIGHT) &kp LG(RIGHT) &kp TILDE       &kp LEFT_ARROW  &kp DOWN       &kp UP         &kp RIGHT     &kp END
+&trans  &trans        &trans        &trans        &trans        &kp COLON       &kp DELETE      &kp BACKSPACE  &kp HOME       &kp PAGE_DOWN &kp PAGE_UP   &trans
                                     &trans        &trans        &trans          &trans          &trans         &kp LS(ENTER)
             >;
         };
