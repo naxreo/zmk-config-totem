@@ -162,8 +162,8 @@
             display-name = "SYM";
             bindings = <
         &mts LG(Q) EXCLAMATION  &mts LG(W) AT_SIGN  &kp HASH   &mts LG(R) DOLLAR  &kp PERCENT      &kp CARET                    &kp AMPERSAND   &as UNDERSCORE MINUS  &mts LG(O) LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS
-        &kp GRAVE               &kp TILDE           &mo 3      &kp PIPE           &kp BACKSLASH    &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as DOUBLE_QUOTES SQT
-&trans  &trans                  &trans              &kp LG(C)  &kp LG(V)          &kp SEMICOLON    &kp DEL                      &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION           &trans
+        &kp GRAVE               &kp TILDE           &mo 4      &kp PIPE           &kp BACKSLASH    &as LEFT_BRACE LEFT_BRACKET  &as PLUS EQUAL  &kp ASTERISK          &as RIGHT_BRACE RIGHT_BRACKET  &as DOUBLE_QUOTES SQT
+&trans  &trans                  &trans              &kp LG(C)  &kp LG(V)          &kp SEMICOLON    &kp DEL                      &kp BACKSPACE   &kp LESS_THAN         &kp GREATER_THAN               &kp QUESTION           &mo 3
                                                     &trans     &trans             &trans           &trans                       &trans          &kp LS(ENTER)
             >;
         };
@@ -183,7 +183,7 @@
             bindings = <
         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0
         &trans        &trans        &trans        &trans        &kp TILDE       &kp LEFT_ARROW  &kp DOWN       &kp UP         &kp RIGHT     &trans
-&trans  &trans        &trans        &trans        &trans        &kp COLON       &kp DELETE      &kp BACKSPACE  &trans         &trans        &trans        &trans
+&trans  &trans        &trans        &trans        &trans        &kp COLON       &kp DELETE      &kp BACKSPACE  &trans         &kp PERIOD    &kp QUESTION  &trans
                                     &trans        &trans        &trans          &trans          &trans         &kp LS(ENTER)
             >;
         };
